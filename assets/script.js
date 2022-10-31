@@ -1,13 +1,13 @@
 $(document).ready(function() { 
 
-    
-    // listen for save button clicks
-    $('saveBtn').on('click', function() {
-        // get nearby values
+    // create a listener for the click event
+    $('.saveBtn').on('click', function() {
+
+        // when the 'click' gets triggered get nearby values
         var value = $(this).siblings('.description').val();
         var time = $(this).parent().attr('id');
         
-        // save in local storage
+        // save the description
         localStorage.setItem(time, value);
         
         
@@ -54,8 +54,6 @@ $(document).ready(function() {
     $('#hour-16 .description').val(localStorage.getItem('hour-16'));
     $('#hour-17 .description').val(localStorage.getItem('hour-17'));
     
-    // display current day on page
+    // use moment to display the current date on the page 
     $('#currentDay').text(moment().format('dddd, MMMM Do'));
 }); 
-// // show notification that item was saved to the localstorage by adding class 'show'
-// $('notification').addclass('show');
